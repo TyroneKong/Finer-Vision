@@ -1,11 +1,12 @@
 import React, { useState, useRef } from "react";
 import "./Form.scss";
 import axios from "axios";
-
-import Button from "@mui/material/Button";
 import moment from "moment";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import { Step1 } from "../components/step1/Step1";
+import { Step2 } from "../components/step2/Step2";
+import { Step3 } from "../components/step3/Step3";
 
 export const Form = () => {
   // set state
@@ -223,132 +224,45 @@ export const Form = () => {
   return (
     <div className="form-container">
       <form onSubmit={step3Validation} className="form">
-        <p className="form__yourdetails-title" onClick={showStep1}>
-          Step 1: Your details
-        </p>
-        <label className={step1show ? "form__yourdetails" : "hide"}>
-          <label className="form__firstname">
-            First Name
-            <input onChange={handleFirstName} value={firstName} />
-            <div style={{ color: "red" }}>{firstNameError}</div>
-          </label>
-          <label className="form__surname">
-            Surname
-            <input onChange={handleSurname} value={surname} />
-            <div style={{ color: "red" }}>{surnameError}</div>
-            <div className="form__email-container">
-              <label className="form__email">
-                Email Address:
-                <input
-                  onChange={handleEmail}
-                  value={email}
-                  type="email"
-                  name="email"
-                />
-                <div style={{ color: "red" }}>{emailError}</div>
-              </label>
-            </div>
-            <div className="button__step1">
-              <Button
-                className="step1Button"
-                onClick={step1Validation}
-                style={{ fontSize: "10px", backgroundColor: "purple" }}
-                variant="contained"
-              >
-                {"Next >"}
-              </Button>
-            </div>
-          </label>
-        </label>
-        <div>
-          <p onClick={showStep2} className="form__moreComments-paragraph">
-            Step 2: More Comments
-          </p>
-        </div>
-        <label className={step2show ? "form__moreComments" : "hide"}>
-          <label className="form__telephone">
-            Telephone
-            <input
-              ref={telephoneRef}
-              onChange={handleTelephone}
-              value={telephone}
-            />
-            <div style={{ color: "red" }}>{telephoneError}</div>
-            Date of birth
-          </label>
+        <Step1
+          showStep1={showStep1}
+          step1show={step1show}
+          handleFirstName={handleFirstName}
+          firstName={firstName}
+          firstNameError={firstNameError}
+          handleSurname={handleSurname}
+          surname={surname}
+          surnameError={surnameError}
+          handleEmail={handleEmail}
+          email={email}
+          emailError={emailError}
+          step1Validation={step1Validation}
+        />
+        <Step2
+          showStep2={showStep2}
+          step2show={step2show}
+          telephoneRef={telephoneRef}
+          handleTelephone={handleTelephone}
+          telephone={telephone}
+          telephoneError={telephoneError}
+          handleGender={handleGender}
+          handleDay={handleDay}
+          handleMonth={handleMonth}
+          handleYear={handleYear}
+          day={day}
+          month={month}
+          year={year}
+          DOBError={DOBError}
+          step2Validation={step2Validation}
+        />
 
-          <select className="form__moreComments-select" onChange={handleGender}>
-            <option>Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-          </select>
-
-          <label className="form__DOB">
-            <input
-              onChange={handleDay}
-              maxLength="2"
-              className="form__DOB--field1"
-              value={day}
-            ></input>
-            <input
-              onChange={handleMonth}
-              maxLength="2"
-              className="form__DOB--field2"
-              value={month}
-            ></input>
-            <input
-              onChange={handleYear}
-              maxLength="2"
-              className="form__DOB--field3"
-              value={year}
-            ></input>
-          </label>
-          <div className="dobError" style={{ color: "red" }}>
-            {DOBError}
-          </div>
-
-          <div className="button__step2">
-            <Button
-              className="step2Button"
-              onClick={step2Validation}
-              style={{ fontSize: "10px", backgroundColor: "purple" }}
-              variant="contained"
-            >
-              {"Next >"}
-            </Button>
-          </div>
-        </label>
-
-        <label>
-          <p className="form__finalComments-title" onClick={showStep3}>
-            Step 3: Final Comments
-          </p>
-          <label
-            className={step3show ? "form__finalComments-textarea" : "hide"}
-          >
-            <label className="form__finalComments">
-              Comments
-              <div className="form__finalComments-textarea-container">
-                <textarea
-                  onChange={handleComment}
-                  value={comment}
-                  ref={commentRef}
-                  className="form__finalComments-textarea"
-                ></textarea>
-              </div>
-              <div className="button__step3">
-                <Button
-                  type="submit"
-                  className="step3Button"
-                  style={{ fontSize: "10px", backgroundColor: "purple" }}
-                  variant="contained"
-                >
-                  {"Next >"}
-                </Button>
-              </div>
-            </label>
-          </label>
-        </label>
+        <Step3
+          showStep3={showStep3}
+          step3show={step3show}
+          handleComment={handleComment}
+          comment={comment}
+          commentRef={commentRef}
+        />
       </form>
     </div>
   );
