@@ -1,0 +1,240 @@
+@use "../styles/partials/mixins" as *;
+
+.form {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &-container {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  border-radius: 4px;
+
+  width: 65%;
+  font-size: 11px;
+
+  &__yourdetails {
+    padding: 10px;
+    display: flex;
+    height: 150px;
+    margin-top: -10px;
+
+    column-gap: 10px;
+    background-color: rgba(187, 180, 180, 0.476);
+    &-title {
+      text-shadow: 1px 1px grey;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      color: white;
+      border-radius: 4px;
+      height: 40px;
+      width: 100%;
+      background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
+    }
+  }
+
+  &__firstname {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 30%;
+    text-align: left;
+    row-gap: 10px;
+  }
+
+  &__surname {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: left;
+    row-gap: 10px;
+  }
+  &__email {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 10px;
+
+    &-container {
+      position: absolute;
+      top: 26%;
+      left: 18%;
+      width: 20%;
+    }
+    &-main {
+      display: flex;
+    }
+  }
+  &__telephone {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: left;
+    row-gap: 10px;
+  }
+  &__finalComments {
+    height: 150px;
+    text-align: left;
+    margin-top: -20px;
+    display: flex;
+    background-color: rgba(187, 180, 180, 0.476);
+
+    &-title {
+      text-shadow: 1px 1px grey;
+
+      color: white;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      height: 40px;
+      width: 100%;
+      background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
+    }
+
+    &-textarea {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border: 0;
+      border-radius: 7px;
+      width: 100%;
+      height: 100%;
+      margin-left: -40px;
+      &-container {
+        position: relative;
+        top: 10%;
+        width: 50%;
+
+        height: 120px;
+      }
+    }
+  }
+  &__moreComments {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    padding: 10px;
+    margin-top: -10px;
+    background-color: rgba(187, 180, 180, 0.476);
+    &-paragraph {
+      text-shadow: 1px 1px grey;
+
+      color: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      text-align: left;
+      background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
+    }
+  }
+  &__gender {
+    font-weight: 400;
+  }
+  &__select {
+    font-weight: 400;
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: left;
+    row-gap: 10px;
+  }
+  &__DOB {
+    display: flex;
+    column-gap: 5px;
+    position: relative;
+    top: 5%;
+
+    &--field {
+      &1 {
+        width: 22px;
+      }
+      &2 {
+        width: 22px;
+      }
+      &3 {
+        width: 22px;
+      }
+    }
+    &-select {
+      width: 20%;
+      position: relative;
+      left: 40%;
+      bottom: 66%;
+      &-input {
+      }
+    }
+  }
+}
+
+input {
+  border-radius: 7px;
+  height: 20px;
+  border: 0;
+}
+
+button {
+  color: white;
+  font-size: 11px;
+  height: 20px;
+}
+.button {
+  background: linear-gradient(rgb(23, 11, 113), rgba(149, 149, 147, 0.752));
+}
+
+.show {
+  color: white;
+  margin-top: -30px;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
+}
+.hide {
+  display: none;
+}
+
+.dobError {
+  text-align: left;
+  position: relative;
+  top: 10%;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 0;
+}
+
+.button__step1 {
+  width: 100%;
+  position: absolute;
+  top: 29%;
+  left: 75%;
+}
+
+.button__step2 {
+  position: relative;
+  left: 45%;
+}
+
+.button__step3 {
+}
+
+select {
+  font-size: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 0;
+  border-radius: 5px;
+  width: 16%;
+  position: relative;
+  bottom: 35%;
+  left: 35%;
+  background: linear-gradient(rgb(238, 236, 233), rgba(208, 204, 184, 0.752));
+}

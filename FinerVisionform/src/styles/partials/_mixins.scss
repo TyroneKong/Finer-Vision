@@ -1,0 +1,25 @@
+// mixins for media queries 
+
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile{
+        @media (max-width: 600px){
+            @content};
+    }
+    @if $breakpoint == tablet-port{
+        @media (max-width:900px){
+            @content
+        };
+    }
+    @if $breakpoint == tablet-land{
+        @media (max-width:1200px){
+            @content
+        };
+    }
+
+    @if $breakpoint == desktop{
+        @media (min-width:1800px){
+            @content
+        };
+    }
+}
