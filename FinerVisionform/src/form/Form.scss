@@ -58,6 +58,7 @@
     flex-direction: column;
     text-align: left;
     row-gap: 10px;
+    width: 97%;
 
     &-container {
       position: absolute;
@@ -232,9 +233,9 @@ select {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: 0;
   border-radius: 5px;
-  width: 16%;
+  width: 11%;
   position: relative;
-  bottom: 35%;
+  bottom: 42%;
   left: 35%;
   background: linear-gradient(rgb(238, 236, 233), rgba(208, 204, 184, 0.752));
 }

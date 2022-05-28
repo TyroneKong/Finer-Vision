@@ -277,7 +277,7 @@ export const Form = () => {
             Date of birth
           </label>
 
-          <select onChange={handleGender}>
+          <select className="form__moreComments-select" onChange={handleGender}>
             <option>Select Gender</option>
             <option>Male</option>
             <option>Female</option>
