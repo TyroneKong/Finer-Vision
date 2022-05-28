@@ -6,14 +6,14 @@
 
 input {
   border-radius: 7px;
-  height: 20px;
+  height: 1.25rem;
   border: 0;
 }
 
 button {
   color: white;
-  font-size: 11px;
-  height: 20px;
+  font-size: 0.6875rem;
+  height: 1.25rem;
 }
 .button {
   background: linear-gradient(rgb(23, 11, 113), rgba(149, 149, 147, 0.752));
@@ -21,9 +21,9 @@ button {
 
 .show {
   color: white;
-  margin-top: -30px;
+  margin-top: -1.875rem;
   width: 100%;
-  height: 40px;
+  height: 2.5rem;
   background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
 }
 .hide {
@@ -34,40 +34,63 @@ button {
   font-weight: 600;
   text-align: left;
   position: relative;
-  top: 10%;
+  top: 3%;
 }
-
-.invalid {
-  border: 2px solid red;
-}
-
-.valid {
-  border: 0;
-}
-
 .button__step1 {
-  width: 100%;
-  position: absolute;
-  top: 29%;
-  left: 75%;
+  position: relative;
+  left: 300%;
+  bottom: 20%;
+  @include responsive(mobile) {
+    left: 275%;
+  }
+  @include responsive(tablet-port) {
+    left: 286%;
+  }
+  @include responsive(desktop) {
+    left: 310%;
+  }
 }
 
 .button__step2 {
   position: relative;
-  left: 45%;
+  left: 44%;
+  bottom: 20%;
+  @include responsive(mobile) {
+    left: 40%;
+  }
+  @include responsive(tablet-port) {
+    left: 42%;
+  }
+  @include responsive(desktop) {
+    left: 45%;
+  }
 }
 
 .button__step3 {
+  position: relative;
+  left: 31%;
+  top: 70%;
+  @include responsive(mobile) {
+    left: 20%;
+  }
+  @include responsive(tablet-port) {
+    left: 24%;
+  }
+  @include responsive(desktop) {
+    left: 38.5%;
+  }
 }
 
 select {
-  font-size: 12px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   width: 13%;
   position: relative;
-  bottom: 35%;
-  left: 35%;
+  right: 12%;
+  bottom: 42%;
+  left: 32%;
+
   background: linear-gradient(rgb(238, 236, 233), rgba(208, 204, 184, 0.752));
 }

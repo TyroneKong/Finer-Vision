@@ -31,18 +31,17 @@ export const Step1 = ({
           Surname
           <input onChange={handleSurname} value={surname} />
           <div style={{ color: "red" }}>{surnameError}</div>
-          <div className="form__email-container">
-            <label className="form__email">
-              Email Address:
-              <input
-                onChange={handleEmail}
-                value={email}
-                type="email"
-                name="email"
-              />
-              <div style={{ color: "red" }}>{emailError}</div>
-            </label>
-          </div>
+        </label>
+
+        <label className="form__email">
+          Email Address:
+          <input
+            onChange={handleEmail}
+            value={email}
+            type="email"
+            name="email"
+          />
+          <div style={{ color: "red" }}>{emailError}</div>
           <div className="button__step1">
             <Button
               className="step1Button"

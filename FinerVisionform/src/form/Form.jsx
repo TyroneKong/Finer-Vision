@@ -43,6 +43,8 @@ export const Form = () => {
   const telephoneRef = useRef();
   const commentRef = useRef();
 
+  const [data, setData] = useState([]);
+
   //reset all forms
 
   const resetForm = () => {
@@ -149,7 +151,50 @@ export const Form = () => {
     axios
       .get("http://localhost:8080/formdata")
       .then((response) => {
-        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // display alert depending on duplicate
+  const duplicateAlert = (telephoneData, emailData) => {
+    if (emailData.includes(userInput.email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Email already exists!",
+      });
+    }
+    if (telephoneData.includes(Number(userInput.telephone.slice(1)))) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Phone number already exists!",
+      });
+      if (
+        telephoneData.includes(Number(userInput.telephone.slice(1))) &&
+        emailData.includes(userInput.email)
+      ) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Phone number and email already exist!",
+        });
+      }
+    }
+  };
+
+  //
+  const checkForDuplicates = () => {
+    axios
+      .get("http://localhost:8080/formdata")
+      .then((response) => {
+        setData(response.data);
+        const alltelephone = data.map((phone) => phone.telephone);
+        const allEmail = data.map((email) => email.email);
+        duplicateAlert(alltelephone, allEmail);
       })
       .catch((err) => {
         console.log(err);
@@ -183,7 +228,6 @@ export const Form = () => {
       setStep1FormValid(true);
       telephoneRef.current.focus();
     }
-    console.log(step1FormValid);
   };
 
   const step2Validation = () => {
@@ -198,12 +242,14 @@ export const Form = () => {
       setStep2FormValid(true);
       setDOB(DateOfBirth);
     }
-    console.log(step2FormValid);
   };
 
   const step3Validation = (e) => {
     e.preventDefault();
     postData();
+    checkForDuplicates();
+    step1Validation();
+    step2Validation();
 
     if (step1FormValid && step2FormValid === true) {
       Swal.fire({
@@ -212,6 +258,7 @@ export const Form = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      resetForm();
     } else {
       Swal.fire({
         icon: "error",

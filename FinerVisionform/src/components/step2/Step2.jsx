@@ -37,13 +37,13 @@ export const Step2 = ({
           <div style={{ color: "red" }}>{telephoneError}</div>
           Date of birth
         </label>
+        <label className="form__gender"> Gender</label>
 
         <select className="form__moreComments-select" onChange={handleGender}>
           <option>Select Gender</option>
           <option>Male</option>
           <option>Female</option>
         </select>
-
         <label className="form__DOB">
           <input
             onChange={handleDay}
@@ -67,7 +67,6 @@ export const Step2 = ({
         <div className="dobError" style={{ color: "red" }}>
           {DOBError}
         </div>
-
         <div className="button__step2">
           <Button
             className="step2Button"

@@ -1,31 +1,35 @@
+@use "../../styles/partials/mixins" as *;
+
 .form {
+  border-radius: 0.25rem;
+
+  width: 60%;
+
+  font-size: 0.6875rem;
   &-container {
-    margin-top: 200px;
+    margin-top: 12.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  border-radius: 4px;
-
-  width: 65%;
-  font-size: 11px;
 
   &__yourdetails {
-    padding: 10px;
+    padding: 0.625rem;
     display: flex;
-    height: 150px;
-    margin-top: -10px;
+    height: 9.375rem;
+    margin-top: -0.625rem;
 
     column-gap: 10px;
     background-color: rgba(187, 180, 180, 0.476);
     &-title {
-      text-shadow: 1px 1px grey;
+      cursor: pointer;
+      text-shadow: 0.0625rem 0.0625rem grey;
       text-align: left;
       display: flex;
       align-items: center;
       color: white;
-      border-radius: 4px;
-      height: 40px;
+      border-radius: 0.25rem;
+      height: 2.5rem;
       width: 100%;
       background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
     }
@@ -50,20 +54,23 @@
     row-gap: 10px;
   }
   &__email {
+    font-weight: 600;
     display: flex;
     flex-direction: column;
+    width: 30%;
     text-align: left;
     row-gap: 10px;
-    width: 97%;
-
-    &-container {
-      position: absolute;
-      top: 26%;
-      left: 18%;
-      width: 20%;
+    position: relative;
+    top: 50%;
+    right: 63%;
+    @include responsive(mobile) {
+      right: 64%;
     }
-    &-main {
-      display: flex;
+    @include responsive(tablet-port) {
+      right: 64%;
+    }
+    @include responsive(desktop) {
+      right: 61.4%;
     }
   }
 }
