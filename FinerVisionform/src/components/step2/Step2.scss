@@ -8,12 +8,13 @@
     background-color: rgba(187, 180, 180, 0.476);
     &-paragraph {
       text-shadow: 0.0625rem 0.0625rem grey;
+      padding-left: 10px;
       cursor: pointer;
       color: white;
       border-radius: 0.25rem;
       display: flex;
       align-items: center;
-      width: 100%;
+      width: 99%;
       height: 2.5rem;
       text-align: left;
       background: linear-gradient(orange, rgba(238, 208, 17, 0.752));

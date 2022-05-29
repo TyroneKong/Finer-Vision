@@ -17,7 +17,7 @@ export const Step3 = ({
         </p>
         <label className={step3show ? "form__finalComments-textarea" : "hide"}>
           <label className="form__finalComments">
-            Comments
+            <p className="form__finalComments-heading">Comments</p>
             <div className="form__finalComments-textarea-container">
               <textarea
                 onChange={handleComment}

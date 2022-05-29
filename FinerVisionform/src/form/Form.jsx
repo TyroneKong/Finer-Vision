@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Form.scss";
 import axios from "axios";
 import moment from "moment";
@@ -93,7 +93,7 @@ export const Form = () => {
     setTelephone(e.target.value);
   };
 
-  // handlers to capture DOB
+  // handlers to capture DOB day, month and year
   const handleDay = (e) => {
     setDay(e.target.value);
   };
@@ -113,7 +113,7 @@ export const Form = () => {
     setComment(e.target.value);
   };
 
-  // Capture date of birth and store as a variable
+  // store DOB as a variable
 
   const DateOfBirth = `${day}/${month}/${year}`;
 
@@ -155,6 +155,18 @@ export const Form = () => {
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+
+  // post data
+  const postData = () => {
+    axios
+      .post("http://localhost:8080/formdata", userInput)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.error(err.response.data.message);
       });
   };
 
@@ -201,17 +213,10 @@ export const Form = () => {
       });
   };
 
-  // post data
-  const postData = () => {
-    axios
-      .post("http://localhost:8080/formdata", userInput)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.error(err.response.data.message);
-      });
-  };
+  //
+  useEffect(() => {
+    getData();
+  }, [data]);
 
   // form validation
   const step1Validation = () => {

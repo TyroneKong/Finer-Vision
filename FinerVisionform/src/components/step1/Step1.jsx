@@ -1,7 +1,7 @@
 import React from "react";
 import "./Step1.scss";
+import { Step1Button } from "./Step1Button";
 
-import Button from "@mui/material/Button";
 export const Step1 = ({
   showStep1,
   step1show,
@@ -43,14 +43,7 @@ export const Step1 = ({
           />
           <div style={{ color: "red" }}>{emailError}</div>
           <div className="button__step1">
-            <Button
-              className="step1Button"
-              onClick={step1Validation}
-              style={{ fontSize: "10px", backgroundColor: "purple" }}
-              variant="contained"
-            >
-              {"Next >"}
-            </Button>
+            <Step1Button step1Validation={step1Validation} />
           </div>
         </label>
       </label>

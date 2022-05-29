@@ -66,16 +66,16 @@ export const Step2 = ({
         </label>
         <div className="dobError" style={{ color: "red" }}>
           {DOBError}
-        </div>
-        <div className="button__step2">
-          <Button
-            className="step2Button"
-            onClick={step2Validation}
-            style={{ fontSize: "10px", backgroundColor: "purple" }}
-            variant="contained"
-          >
-            {"Next >"}
-          </Button>
+          <div className="button__step2">
+            <Button
+              className="step2Button"
+              onClick={step2Validation}
+              style={{ fontSize: "10px", backgroundColor: "purple" }}
+              variant="contained"
+            >
+              {"Next >"}
+            </Button>
+          </div>
         </div>
       </label>
     </div>

@@ -2,18 +2,22 @@
 
 .form {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &-container {
+  }
 }
 
 input {
   border-radius: 7px;
   height: 1.25rem;
   border: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem;
 }
 
 button {
   color: white;
   font-size: 0.6875rem;
   height: 1.25rem;
+  background: linear-gradient(rgb(95, 80, 153), rgba(178, 175, 210, 0.752));
 }
 .button {
   background: linear-gradient(rgb(23, 11, 113), rgba(149, 149, 147, 0.752));
@@ -38,8 +42,8 @@ button {
 }
 .button__step1 {
   position: relative;
-  left: 300%;
-  bottom: 20%;
+  left: 299%;
+  bottom: 13%;
   @include responsive(mobile) {
     left: 275%;
   }
@@ -53,31 +57,31 @@ button {
 
 .button__step2 {
   position: relative;
-  left: 44%;
-  bottom: 20%;
+  left: 89%;
+  bottom: 70%;
   @include responsive(mobile) {
     left: 40%;
   }
   @include responsive(tablet-port) {
-    left: 42%;
+    left: 86%;
   }
   @include responsive(desktop) {
-    left: 45%;
+    left: 93%;
   }
 }
 
 .button__step3 {
   position: relative;
-  left: 31%;
-  top: 70%;
+  left: 30.5%;
+  top: 78%;
   @include responsive(mobile) {
-    left: 20%;
+    left: 21%;
   }
   @include responsive(tablet-port) {
     left: 24%;
   }
   @include responsive(desktop) {
-    left: 38.5%;
+    left: 38.7%;
   }
 }
 
@@ -85,11 +89,12 @@ select {
   font-size: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem;
   border: 0;
+  height: 100%;
   border-radius: 0.3125rem;
   width: 13%;
   position: relative;
   right: 12%;
-  bottom: 42%;
+  bottom: 43%;
   left: 32%;
 
   background: linear-gradient(rgb(238, 236, 233), rgba(208, 204, 184, 0.752));

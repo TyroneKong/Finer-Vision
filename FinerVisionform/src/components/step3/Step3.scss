@@ -9,6 +9,7 @@
     background-color: rgba(187, 180, 180, 0.476);
 
     &-title {
+      padding-left: 10px;
       text-shadow: 0.0625rem 0.0625rem grey;
       cursor: pointer;
       color: white;
@@ -16,10 +17,14 @@
       align-items: center;
       border-radius: 0.25rem;
       height: 2.5rem;
-      width: 100%;
+      width: 99%;
       background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
     }
-
+    &-heading {
+      position: relative;
+      bottom: 8%;
+      left: 2%;
+    }
     &-textarea {
       box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.3125rem 0.9375rem;
       border: 0;

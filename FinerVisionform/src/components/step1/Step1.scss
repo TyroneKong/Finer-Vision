@@ -23,6 +23,7 @@
     background-color: rgba(187, 180, 180, 0.476);
     &-title {
       cursor: pointer;
+      padding-left: 10px;
       text-shadow: 0.0625rem 0.0625rem grey;
       text-align: left;
       display: flex;
@@ -30,7 +31,7 @@
       color: white;
       border-radius: 0.25rem;
       height: 2.5rem;
-      width: 100%;
+      width: 99%;
       background: linear-gradient(orange, rgba(238, 208, 17, 0.752));
     }
   }
