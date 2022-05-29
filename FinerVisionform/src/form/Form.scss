@@ -42,7 +42,7 @@ button {
 }
 .button__step1 {
   position: relative;
-  left: 299%;
+  left: 309%;
   bottom: 13%;
   @include responsive(mobile) {
     left: 275%;
@@ -50,14 +50,17 @@ button {
   @include responsive(tablet-port) {
     left: 286%;
   }
+  @include responsive(tablet-land) {
+    left: 297%;
+  }
   @include responsive(desktop) {
-    left: 310%;
+    left: 312%;
   }
 }
 
 .button__step2 {
   position: relative;
-  left: 89%;
+  left: 92%;
   bottom: 70%;
   @include responsive(mobile) {
     left: 40%;
@@ -66,22 +69,22 @@ button {
     left: 86%;
   }
   @include responsive(desktop) {
-    left: 93%;
+    left: 93.6%;
   }
 }
 
 .button__step3 {
   position: relative;
-  left: 30.5%;
+  left: 35.5%;
   top: 78%;
   @include responsive(mobile) {
-    left: 21%;
+    left: 22%;
   }
   @include responsive(tablet-port) {
     left: 24%;
   }
   @include responsive(desktop) {
-    left: 38.7%;
+    left: 40.6%;
   }
 }
 
