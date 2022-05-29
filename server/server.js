@@ -7,6 +7,8 @@ const formRoute = require("./routes/form");
 const cors = require("cors");
 
 // connect to mongodb
+
+//URI = "mongodb+srv://tyrone:NOJLBxz52xuif1vz@cluster0.mcjuo.mongodb.net/?retryWrites=true&w=majority"
 const uri = process.env.URI;
 mongoose.connect(uri);
 
